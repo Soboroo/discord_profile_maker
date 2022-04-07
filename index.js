@@ -1,8 +1,9 @@
 const { Client } = require('discord.js')
 const express = require('express')
 const expressHandlebars = require("express-handlebars")
+require('dotenv').config()
 
-const { token } = require(__dirname + '/dev/config.json')
+const token = process.env.DISCORD_TOKEN
 const app = express()
 const PORT = 3000
 
