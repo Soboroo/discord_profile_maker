@@ -33,6 +33,13 @@ app.get('/profile', (req, res) => {
 					username: user.username,
 					discriminator: user.discriminator,
 					avatar: user.displayAvatarURL(),
+				}, (err, html) => {
+					if (err) {
+						console.log(err);
+					} else {
+						res.setHeader('Content-Type', 'image/svg+xml');
+						res.send(html);
+					}
 				})
 		})
 	} else {
