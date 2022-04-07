@@ -5,7 +5,7 @@ require('dotenv').config()
 
 const token = process.env.DISCORD_TOKEN
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 app.engine('handlebars', expressHandlebars.engine());
 app.set('view engine', 'handlebars')
